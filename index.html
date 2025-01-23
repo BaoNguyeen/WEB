@@ -6,7 +6,8 @@
     <title>Test</title>
 
     <!-- STYLE  -->
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet/less" type="text/css" href="styles.less" />
 
     <!-- FONT  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
       rel="stylesheet"
     />
+
     <!-- ICON -->
     <link
       rel="stylesheet"
@@ -23,19 +25,24 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="shortcut icon" href="src/1. symbol.ico" type="image/x-icon">
   </head>
   <body>
     <div class="left-container">
-      <i class="fa-duotone fa-solid fa-screwdriver-wrench"></i>
-      <i class="fa-regular fa-folder-open"></i>
-      <i class="fa-solid fa-file-circle-plus"></i>
-      <i class="fa-solid fa-sliders"></i>
-      <i class="fa-solid fa-language"></i>
-      <i class="fa-regular fa-circle-question"></i>
+      <a href=""><i class="fa-duotone fa-solid fa-screwdriver-wrench"></i></a>
+      <a href=""><i class="fa-regular fa-folder-open"></i></a>
+      <a href=""><i class="fa-solid fa-file-circle-plus"></i></a>
+      <a href=""><i class="fa-solid fa-sliders"></i></a>
+      <a href=""><i class="fa-solid fa-language"></i></a>
+      <a href=""><i class="fa-regular fa-circle-question"></i></a>
     </div>
     <div class="right-container">
-      <div class="code-block"></div>
+      <div class="code-block">
+        <img src="src/xanh.png" alt="">
+      </div>
       <div class="code-canvas"></div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
   </body>
 </html>
