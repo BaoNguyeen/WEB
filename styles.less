@@ -28,7 +28,7 @@ body {
 .container {
   width: 100%;
   display: grid;
-  grid-template-columns: 60px auto;
+  grid-template-columns: 50px auto;
 }
 
 .left-container {
@@ -45,27 +45,157 @@ body {
     padding: 15px 0;
   }
 }
-
 .right-container {
-  background-color: #264653;
   display: grid;
-  grid-template-columns: 230px auto;
-  grid-template-rows: 75px auto;
-  padding: 10px;
-  font-size: 18px;
+  grid-template-columns: 230px auto; /* Phần left-blocks cố định 230px */
+  height: 100%;
 }
 
-header.svelte-wedeaa {
+/* Phần bên trái */
+.left-blocks {
+  background-color: var(--primary-color);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 230px; /* Đảm bảo chiều rộng chính xác */
+  overflow-y: auto; /* Cuộn nếu nội dung vượt quá */
+}
+
+.logo img {
+  width: 80%; /* Logo chiếm 80% chiều rộng container */
+  margin: 0 auto;
+}
+
+.blocks {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.category {
+  margin-bottom: 15px;
+}
+
+.category-header {
   display: flex;
   align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: var(--blue);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-.logo {
-  img {
-    width: 80%;
+.category-header:hover {
+  background-color: var(--red);
+}
+
+.category-content {
+  display: none; /* Ban đầu ẩn nội dung */
+  margin-top: 10px;
+  padding-left: 20px; /* Khoảng cách thụt vào */
+}
+
+.block {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f4a261;
+  color: #000;
+  border-radius: 5px;
+  cursor: grab; /* Biểu tượng kéo thả */
+  transition: background-color 0.3s;
+}
+
+.block:hover {
+  background-color: #e76f51;
+}
+
+/* Phần bên phải */
+.right-workspace {
+  display: grid;
+  grid-template-rows: 50px 1fr; /* Toolbar cao 50px, nội dung còn lại */
+  gap: 10px;
+  padding: 10px;
+}
+
+/* Toolbar phía trên */
+.workspace-toolbar {
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+}
+
+.workspace-toolbar .dropdown {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--primary-color);
+  background-color: var(--white);
+}
+
+.workspace-toolbar .btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--blue);
+  color: var(--white);
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: var(--red);
   }
 }
 
+.workspace-toolbar .btn.blink {
+  background-color: var(--red);
+}
+
+/* Nội dung chính */
+.workspace-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Canvas chiếm 2 phần, Code Preview chiếm 1 phần */
+  gap: 10px;
+  height: 100%;
+}
+
 .code-canvas {
-  grid-column: 1/3;
+  background-color: #f0f0f0;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Để khối được kéo thả vào */
+  overflow: hidden;
+}
+
+.code-canvas p {
+  color: #999;
+  font-style: italic;
+}
+
+.code-preview {
+  background-color: #f4a261;
+  color: #000;
+}
+
+.canvas-block {
+  position: absolute; /* Khối được tự do di chuyển */
+  top: 50%; /* Vị trí ban đầu */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Căn giữa ban đầu */
+  padding: 10px;
+  background-color: #e9c46a;
+  color: #000;
+  border-radius: 5px;
+  cursor: move; /* Biểu tượng khi di chuyển */
 }

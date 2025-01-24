@@ -39,15 +39,82 @@
       </div>
 
       <div class="right-container">
-        <header class="svelte-wedeaa">
-          <div class="logo svelte-wedeaa">
-            <img class="logo-DHKH" src="src/xanh.png" alt="" />
+        <!-- Phần bên trái -->
+        <div class="left-blocks">
+          <div class="logo">
+            <img class="logo-DHKH" src="src/xanh.png" alt="Logo" />
           </div>
-          <div class="main-toolbar svelte-wedeaa"></div>
-        </header>
-        <div class="code-canvas"></div>
+          <div class="blocks">
+            <!-- Danh mục Input/Output -->
+            <div class="category">
+              <div class="category-header" data-category="io">
+                <i class="fa-solid fa-arrow-right"></i>
+                <span>Input/Output</span>
+              </div>
+              <div class="category-content" id="category-io">
+                <div class="block" draggable="true">Set pin</div>
+                <div class="block" draggable="true">Read analogue pin</div>
+                <div class="block" draggable="true">State of pin</div>
+              </div>
+            </div>
+          
+            <!-- Danh mục Sensors -->
+            <div class="category">
+              <div class="category-header" data-category="sensors">
+                <i class="fa-solid fa-circle"></i>
+                <span>Sensors</span>
+              </div>
+              <div class="category-content" id="category-sensors">
+                <div class="block" draggable="true">Temperature Sensor</div>
+                <div class="block" draggable="true">Light Sensor</div>
+              </div>
+            </div>
+          
+            <!-- Danh mục Control -->
+            <div class="category">
+              <div class="category-header" data-category="control">
+                <i class="fa-solid fa-square"></i>
+                <span>Control</span>
+              </div>
+              <div class="category-content" id="category-control">
+                <div class="block" draggable="true">Forever</div>
+                <div class="block" draggable="true">Wait</div>
+                <div class="block" draggable="true">Repeat</div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- Phần bên phải -->
+        <div class="right-workspace">
+          <!-- Toolbar phía trên -->
+          <div class="workspace-toolbar">
+            <select class="dropdown">
+              <option>Arduino Uno</option>
+              <option>Arduino Nano</option>
+              <option>Arduino Mega</option>
+            </select>
+            <button class="btn upload">Upload</button>
+            <button class="btn blink">Blink</button>
+            <button class="btn export">Export</button>
+            <button class="btn hide-sidebar">Hide Sidebar</button>
+          </div>
+
+          <!-- Nội dung chính -->
+          <div class="workspace-content">
+            <div class="code-canvas">
+              <p>Canvas</p>
+            </div>
+            <div class="code-preview">
+          
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    <script src="scripts.js"></script>
   </body>
 </html>
